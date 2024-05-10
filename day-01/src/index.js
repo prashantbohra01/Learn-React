@@ -10,6 +10,7 @@ let curDate = new Date().toLocaleDateString();
 let curTime = new Date().toLocaleTimeString();
 ReactDOM.render(
   <>
+
  <h1>Hello Guys</h1>
  <p>yo</p>
  <ol>
@@ -23,6 +24,8 @@ ReactDOM.render(
 
 <p>Current date is = {curDate}</p>
 <p>Current time is = {curTime}</p>
+
+<img />  #self closing tag
  </>,
   document.getElementById("root")
 );

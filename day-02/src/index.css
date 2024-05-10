@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.head{
+    color: rgb(33, 255, 237);
+    font-size: 32px;
+    text-align: center;
+    text-decoration: underline black;
+}
+.img-div{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.img-div img{
+    border: 1px solid black;
+    width: 250px;
+    height: 300px;
+    margin: 10px 10px;
+}
