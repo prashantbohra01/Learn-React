@@ -21,7 +21,7 @@ const img3 = "https://picsum.photos/300/300";
 
 const head = {
     color: "green",
-    textAlign: "center",
+    textAlign: "center",              // how to use inline css in React
     fontWeight: "500",
     fontSize: "32px",
     fontFamily: '"Poetsen One", sans-serif',

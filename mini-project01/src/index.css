@@ -1,0 +1,13 @@
+body{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.head{
+    margin-top: 100px;
+    background-color: burlywood;
+    width: 450px;
+    padding: 10px;
+    border-radius: 20px;
+}
