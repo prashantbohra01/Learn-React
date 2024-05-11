@@ -19,11 +19,18 @@ const img3 = "https://picsum.photos/300/300";
 // document.getElementById('root'));
 // ***********************************************
 
+const head = {
+    color: "green",
+    textAlign: "center",
+    fontWeight: "500",
+    fontSize: "32px",
+    fontFamily: '"Poetsen One", sans-serif',
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
  <>
- <h2 className="head">My name is Prashant Bohra</h2>
+ <h2 style={head}>My name is Prashant Bohra</h2>
  <div className="img-div">
  <img className="img" src={img1} alt="random"/>                     
  <img className="img" src={img2} alt="random"/>
