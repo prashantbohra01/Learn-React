@@ -5,6 +5,7 @@ function App() {
   const [color, setColor] = useState("grey")
 
   return (
+
     <div className="w-full h-screen duration-200" 
     style={{backgroundColor: color}}>
       <div className="fixed flex flex-wrap justify-center 
