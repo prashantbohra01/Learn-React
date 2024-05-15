@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #d2dbdd;
+  }
+  .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+  .main h1{
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  .main button{
+    padding: 18px;
+    background-color: blueviolet;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  button:hover{
+    background-color: rgb(164, 88, 235);
+    border: 1px solid black;
+  }
