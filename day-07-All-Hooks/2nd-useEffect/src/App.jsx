@@ -8,19 +8,19 @@ import { useEffect } from 'react'
 // useEffect accept two arguements. The second arguement is optional. useEffect(<function>,<dependency>)
 
 function App() {
-  const [count, setCount] = useState(0)
-  
-  useEffect(() =>{
-    setTimeout(() => {
-      setCount((count) => count + 1);
-    }, 1000);
 
-    return() => clearTimeout(App)
-  },[]);
+  const [count, setCount] = useState(0)
+
+   useEffect(()=> {
+    // console.log("Hello useEffect");
+    document.title = `Chats (${count})`
+   },)                                      //  useEffect will run after the priortised code it will run as a side effect.
+   console.log("Hello from outside");       // Thats why this will print first then after that useEffect will be called.
 
   return (
     <>
-      <h1>I've rendered {count} times!</h1>
+      <h1>{count}</h1>
+      <button className='btn' onClick={()=> setCount(count+1)}>Click😃</button>
     </>
   )
 }
