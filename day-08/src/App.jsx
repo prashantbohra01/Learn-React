@@ -7,6 +7,7 @@ function App() {
     fname: '',
     lname: '',
   });
+  
  
   const inputEvent = (e) => {     
       const value = e.target.value;
