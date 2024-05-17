@@ -3,29 +3,49 @@ import './App.css'
 
 function App() {
   
-  const [fname, setFName] = useState('');
-  const [lname, setLName] = useState('');
-  const [fullName, setFullName] = useState();
+  const [fullname, setFullName] = useState({
+    fname: '',
+    lname: '',
+  });
+ 
+  const inputEvent = (e) => {     
+      const value = e.target.value;
+      const name = e.target.name;
 
-  const inputEvent = (e) => {
-      setFName(e.target.value)
+      setFullName((prev)=>{
+        if(name=== 'fName'){
+         return{
+          fname: value,
+          lname: prev.lname,
+        }
+        }else if(name=== 'lName'){
+          return{
+           fname: prev.fname,
+           lname: value,
+         };
+   }
+   });
+  
   }
-  const inputEvents = (e) => {
-      setLName(e.target.value)
-  }
-
-
   const onSubmits = (event) => {
     event.preventDefault();
-    setFullName(fname + " " + lname);
+    alert('form submitted');
   }
-
+  
   return (
     <>
     <form onSubmit={onSubmits}>
-      <h1>Hello {fullName}</h1>
-      <input type='text' placeholder='Enter Your First Name' onChange={inputEvent} value={fname}/>
-      <input type='text' placeholder='Enter your Last Name' onChange={inputEvents} value={lname}/>
+      <h1>Hello {fullname.fname} {fullname.lname}</h1>
+      <input type='text'
+       placeholder='Enter Your First Name'
+       name='fname'
+       onChange={inputEvent}
+       value={fullname.fname}/>
+      <input type='text'  
+       placeholder='Enter your Last Name'
+       name='lname'
+       onChange={inputEvent} 
+       value={fullname.lname}/>
       <button>Submit</button>
       </form>
     </>
