@@ -2,32 +2,20 @@ import { useState } from 'react';
 import './App.css'
 
 function App() {
-  
-  const [fullname, setFullName] = useState({
-    fname: '',
-    lname: '',
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: ''
   });
   
- 
-  const inputEvent = (e) => {     
-      const value = e.target.value;
-      const name = e.target.name;
-
-      setFullName((prev)=>{
-        if(name=== 'fName'){
-         return{
-          fname: value,
-          lname: prev.lname,
-        }
-        }else if(name=== 'lName'){
-          return{
-           fname: prev.fname,
-           lname: value,
-         };
-   }
-   });
-  
+  const inputEvent = (e) => {
+    const {name, value} = e.target;
+    setFormData({
+      ...formData,  // this will store the previous value of formData
+      [name]: value,
+    })
   }
+
   const onSubmits = (event) => {
     event.preventDefault();
     alert('form submitted');
@@ -36,17 +24,22 @@ function App() {
   return (
     <>
     <form onSubmit={onSubmits}>
-      <h1>Hello {fullname.fname} {fullname.lname}</h1>
+      <h1>Hello {formData.name} {formData.email} {formData.password}</h1>
       <input type='text'
        placeholder='Enter Your First Name'
-       name='fname'
+       name='name'
        onChange={inputEvent}
-       value={fullname.fname}/>
-      <input type='text'  
-       placeholder='Enter your Last Name'
-       name='lname'
+       value={formData.name}/>
+      <input type='email'  
+       placeholder='Enter your Email'
+       name='email'
        onChange={inputEvent} 
-       value={fullname.lname}/>
+       value={formData.email}/>
+      <input type='password'  
+       placeholder='Enter your Password'
+       name='password'
+       onChange={inputEvent} 
+       value={formData.password}/>
       <button>Submit</button>
       </form>
     </>
