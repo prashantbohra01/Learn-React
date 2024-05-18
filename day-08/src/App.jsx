@@ -11,7 +11,7 @@ function App() {
   const inputEvent = (e) => {
     const {name, value} = e.target;
     setFormData({
-      ...formData,  // this will store the previous value of formData
+      ...formData,  // (spread operator) this will store the previous value of formData
       [name]: value,
     })
   }
@@ -25,21 +25,25 @@ function App() {
     <>
     <form onSubmit={onSubmits}>
       <h1>Hello {formData.name} {formData.email} {formData.password}</h1>
+     
       <input type='text'
        placeholder='Enter Your First Name'
        name='name'
        onChange={inputEvent}
        value={formData.name}/>
+     
       <input type='email'  
        placeholder='Enter your Email'
        name='email'
        onChange={inputEvent} 
        value={formData.email}/>
+     
       <input type='password'  
        placeholder='Enter your Password'
        name='password'
        onChange={inputEvent} 
        value={formData.password}/>
+     
       <button>Submit</button>
       </form>
     </>
