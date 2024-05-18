@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { useEffect } from 'react'
+import Fetch from './Fetch'
 
 
 // The useEffect Hook allows you to perform side effects in your components.
@@ -21,6 +22,9 @@ function App() {
     <>
       <h1>{count}</h1>
       <button className='btn' onClick={()=> setCount(count+1)}>Click😃</button>
+      <br />
+      <hr />
+      <Fetch />
     </>
   )
 }
