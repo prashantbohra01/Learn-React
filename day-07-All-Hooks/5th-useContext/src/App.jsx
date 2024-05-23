@@ -1,18 +1,26 @@
-import { useContext, useState } from 'react'
+import { createContext } from 'react'
 import './App.css'
+import B from "./B"
 
-function App() {
-  const [count, setCount] = useState(0)
+// Context API 
+// It is designed to share state across the entire React component tree. 
+// Using context API you can share a state to the entire "App" component tree without having to pass it as props at each level.
 
-  const useCon = useContext(GreetContext)
+const GreetContext = createContext();
+const Greet2Context = createContext();
+
+export default function App() {
+  const greet = "Hello"
+  const greet2 = "Hello2"
 
   return (
     <>
-
-     <h1>Greet: {useCon}</h1>
-    
+    <GreetContext.Provider value={{greet, greet2}}>
+      <B />
+    </GreetContext.Provider>
     </>
   )
 }
 
-export default App
+export {GreetContext};
+
