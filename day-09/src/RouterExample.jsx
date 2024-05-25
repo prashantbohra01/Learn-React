@@ -15,6 +15,7 @@ export default function () {
             <Route path='/contact' element={<Contact />}></Route>
             <Route path='/about' element={<About />}></Route>
             <Route path='/login' element={<div>Login</div>}></Route>
+            <Route path='*' element={<div>Eror 404</div>}></Route>
         </Routes>
     </BrowserRouter>
  
